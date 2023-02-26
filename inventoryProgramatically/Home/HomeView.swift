@@ -26,5 +26,9 @@ extension HomeView: HomeViewProtocol {
 }
 
 extension HomeView: HomeViewUIDelegate {
+    func notifyRegisterUser() {
+        self.presenter?.requestRegisterUser()
+    }
+    
     
 }

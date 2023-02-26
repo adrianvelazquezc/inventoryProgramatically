@@ -16,9 +16,9 @@ protocol HomeInteractorProtocol: AnyObject {
 }
 
 protocol HomePresenterProtocol: AnyObject {
-    
+    func requestRegisterUser()
 }
 
 protocol HomeRouterProtocol: AnyObject {
-    
+    func navigateToRegisterUser()
 }

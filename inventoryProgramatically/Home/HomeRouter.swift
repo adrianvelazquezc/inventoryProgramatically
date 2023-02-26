@@ -13,5 +13,14 @@ class HomeRouter{
 }
 
 extension HomeRouter: HomeRouterProtocol{
+    func navigateToRegisterUser() {
+        if let navigationController = self.navigation{
+            DispatchQueue.main.async {
+                let vc = RegisterMain.createModule(navigation: navigationController)
+                navigationController.pushViewController(vc, animated: true )
+            }
+        }
+    }
+    
     
 }

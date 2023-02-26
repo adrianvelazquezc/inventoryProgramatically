@@ -19,6 +19,16 @@
 		CEC29FE829ABE04E009818E4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC29FE029ABE04E009818E4 /* HomeView.swift */; };
 		CEC29FE929ABE04E009818E4 /* HomeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC29FE129ABE04E009818E4 /* HomeEntity.swift */; };
 		CEC29FEC29ABE825009818E4 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC29FEB29ABE825009818E4 /* String+Extension.swift */; };
+		CEC29FF729ABF10B009818E4 /* RegisterViewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC29FEF29ABF10B009818E4 /* RegisterViewUI.swift */; };
+		CEC29FF829ABF10B009818E4 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC29FF029ABF10B009818E4 /* RegisterPresenter.swift */; };
+		CEC29FF929ABF10B009818E4 /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC29FF129ABF10B009818E4 /* RegisterRouter.swift */; };
+		CEC29FFA29ABF10B009818E4 /* RegisterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC29FF229ABF10B009818E4 /* RegisterProtocols.swift */; };
+		CEC29FFB29ABF10B009818E4 /* RegisterMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC29FF329ABF10B009818E4 /* RegisterMain.swift */; };
+		CEC29FFC29ABF10B009818E4 /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC29FF429ABF10B009818E4 /* RegisterInteractor.swift */; };
+		CEC29FFD29ABF10B009818E4 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC29FF529ABF10B009818E4 /* RegisterView.swift */; };
+		CEC29FFE29ABF10B009818E4 /* RegisterEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC29FF629ABF10B009818E4 /* RegisterEntity.swift */; };
+		CEC2A00029ABF1B6009818E4 /* inventory_NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC29FFF29ABF1B6009818E4 /* inventory_NavigationBar.swift */; };
+		CEC2A00229ABF9A1009818E4 /* InventoryColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC2A00129ABF9A1009818E4 /* InventoryColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +46,16 @@
 		CEC29FE029ABE04E009818E4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CEC29FE129ABE04E009818E4 /* HomeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEntity.swift; sourceTree = "<group>"; };
 		CEC29FEB29ABE825009818E4 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		CEC29FEF29ABF10B009818E4 /* RegisterViewUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewUI.swift; sourceTree = "<group>"; };
+		CEC29FF029ABF10B009818E4 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
+		CEC29FF129ABF10B009818E4 /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
+		CEC29FF229ABF10B009818E4 /* RegisterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProtocols.swift; sourceTree = "<group>"; };
+		CEC29FF329ABF10B009818E4 /* RegisterMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterMain.swift; sourceTree = "<group>"; };
+		CEC29FF429ABF10B009818E4 /* RegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractor.swift; sourceTree = "<group>"; };
+		CEC29FF529ABF10B009818E4 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		CEC29FF629ABF10B009818E4 /* RegisterEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterEntity.swift; sourceTree = "<group>"; };
+		CEC29FFF29ABF1B6009818E4 /* inventory_NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = inventory_NavigationBar.swift; sourceTree = "<group>"; };
+		CEC2A00129ABF9A1009818E4 /* InventoryColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +89,8 @@
 			isa = PBXGroup;
 			children = (
 				CEC29FD929ABE022009818E4 /* Home */,
-				CEC29FEA29ABE817009818E4 /* Extension */,
+				CEC29FED29ABF0D7009818E4 /* Register */,
+				CEC29FEE29ABF0EE009818E4 /* Components */,
 				CEC29FC529ABDF0B009818E4 /* AppDelegate.swift */,
 				CEC29FCE29ABDF0F009818E4 /* Assets.xcassets */,
 				CEC29FD029ABDF0F009818E4 /* LaunchScreen.storyboard */,
@@ -97,8 +118,33 @@
 			isa = PBXGroup;
 			children = (
 				CEC29FEB29ABE825009818E4 /* String+Extension.swift */,
+				CEC2A00129ABF9A1009818E4 /* InventoryColor.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		CEC29FED29ABF0D7009818E4 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				CEC29FEF29ABF10B009818E4 /* RegisterViewUI.swift */,
+				CEC29FF029ABF10B009818E4 /* RegisterPresenter.swift */,
+				CEC29FF129ABF10B009818E4 /* RegisterRouter.swift */,
+				CEC29FF229ABF10B009818E4 /* RegisterProtocols.swift */,
+				CEC29FF329ABF10B009818E4 /* RegisterMain.swift */,
+				CEC29FF429ABF10B009818E4 /* RegisterInteractor.swift */,
+				CEC29FF529ABF10B009818E4 /* RegisterView.swift */,
+				CEC29FF629ABF10B009818E4 /* RegisterEntity.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		CEC29FEE29ABF0EE009818E4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CEC29FFF29ABF1B6009818E4 /* inventory_NavigationBar.swift */,
+				CEC29FEA29ABE817009818E4 /* Extension */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,14 +218,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEC29FE329ABE04E009818E4 /* HomePresenter.swift in Sources */,
+				CEC29FF729ABF10B009818E4 /* RegisterViewUI.swift in Sources */,
 				CEC29FE629ABE04E009818E4 /* HomeMain.swift in Sources */,
+				CEC29FFC29ABF10B009818E4 /* RegisterInteractor.swift in Sources */,
+				CEC29FFB29ABF10B009818E4 /* RegisterMain.swift in Sources */,
 				CEC29FE529ABE04E009818E4 /* HomeProtocols.swift in Sources */,
 				CEC29FE429ABE04E009818E4 /* HomeRouter.swift in Sources */,
+				CEC2A00229ABF9A1009818E4 /* InventoryColor.swift in Sources */,
 				CEC29FC629ABDF0B009818E4 /* AppDelegate.swift in Sources */,
+				CEC29FFD29ABF10B009818E4 /* RegisterView.swift in Sources */,
 				CEC29FE829ABE04E009818E4 /* HomeView.swift in Sources */,
+				CEC29FF829ABF10B009818E4 /* RegisterPresenter.swift in Sources */,
 				CEC29FE229ABE04E009818E4 /* HomeViewUI.swift in Sources */,
 				CEC29FE929ABE04E009818E4 /* HomeEntity.swift in Sources */,
+				CEC29FFE29ABF10B009818E4 /* RegisterEntity.swift in Sources */,
 				CEC29FEC29ABE825009818E4 /* String+Extension.swift in Sources */,
+				CEC29FF929ABF10B009818E4 /* RegisterRouter.swift in Sources */,
+				CEC2A00029ABF1B6009818E4 /* inventory_NavigationBar.swift in Sources */,
+				CEC29FFA29ABF10B009818E4 /* RegisterProtocols.swift in Sources */,
 				CEC29FE729ABE04E009818E4 /* HomeInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
