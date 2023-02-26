@@ -17,8 +17,13 @@ class HomeView: UIViewController {
             navigation: self.navigationController!,
             delegate: self
         )
+        self.navigationController?.isNavigationBarHidden = true
         view = ui
     }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .darkContent
+    }
+    
 }
 
 extension HomeView: HomeViewProtocol {

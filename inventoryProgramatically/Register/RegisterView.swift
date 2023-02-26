@@ -20,6 +20,9 @@ class RegisterView: UIViewController {
         view = ui
         self.navigationController?.isNavigationBarHidden = true
     }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
 }
 
 extension RegisterView: RegisterViewProtocol {

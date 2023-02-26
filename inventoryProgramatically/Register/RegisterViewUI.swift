@@ -34,7 +34,6 @@ class RegisterViewUI: UIView {
     private lazy var userNameTextField: UITextField = {
         let textField = UITextField()
         textField.textColor = .black
-        textField.placeholder = "Ingresa tu usuario"
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
         textField.leftViewMode = .always
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -43,6 +42,9 @@ class RegisterViewUI: UIView {
         textField.layer.cornerRadius = 10
         textField.layer.borderColor = UIColor.black.cgColor
         textField.delegate = self
+        let placeholderAttributes = [NSAttributedString.Key.foregroundColor: InventoryColor.placeHolderText]
+        let placeholderText = "Ingresa un nombre de usuario"
+        textField.attributedPlaceholder = NSAttributedString(string: placeholderText, attributes: placeholderAttributes)
         return textField
     }()
     
@@ -57,7 +59,6 @@ class RegisterViewUI: UIView {
     private lazy var userPasswordTextField: UITextField = {
         let textField = UITextField()
         textField.textColor = .black
-        textField.placeholder = "Ingresa tu contraseña"
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
         textField.leftViewMode = .always
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -66,6 +67,9 @@ class RegisterViewUI: UIView {
         textField.layer.cornerRadius = 10
         textField.layer.borderColor = UIColor.black.cgColor
         textField.delegate = self
+        let placeholderAttributes = [NSAttributedString.Key.foregroundColor: InventoryColor.placeHolderText]
+        let placeholderText = "Ingresa una contraseña"
+        textField.attributedPlaceholder = NSAttributedString(string: placeholderText, attributes: placeholderAttributes)
         return textField
     }()
     
@@ -157,7 +161,7 @@ class RegisterViewUI: UIView {
             registerButton.backgroundColor = .lightGray
             return false
         }
-        registerButton.backgroundColor = .link
+        registerButton.backgroundColor = InventoryColor.softColor
         return true
     }
 }
