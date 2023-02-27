@@ -7,9 +7,10 @@
 
 import Foundation
 import UIKit
+import FirebaseAuth
 
 protocol RegisterViewUIDelegate {
-    
+    func notifyError(error: String)
 }
 
 class RegisterViewUI: UIView {
@@ -23,15 +24,15 @@ class RegisterViewUI: UIView {
         return navigationBar
     }()
     
-    let userNameLabel: UILabel = {
+    let userMailLabel: UILabel = {
         let label = UILabel()
-        label.attributedText = getDecorativeSubtitleText(text: "Usuario")
+        label.attributedText = getDecorativeSubtitleText(text: "Correo")
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    private lazy var userNameTextField: UITextField = {
+    private lazy var userMailTextField: UITextField = {
         let textField = UITextField()
         textField.textColor = .black
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
@@ -43,7 +44,7 @@ class RegisterViewUI: UIView {
         textField.layer.borderColor = UIColor.black.cgColor
         textField.delegate = self
         let placeholderAttributes = [NSAttributedString.Key.foregroundColor: InventoryColor.placeHolderText]
-        let placeholderText = "Ingresa un nombre de usuario"
+        let placeholderText = "Ingresa un correo"
         textField.attributedPlaceholder = NSAttributedString(string: placeholderText, attributes: placeholderAttributes)
         return textField
     }()
@@ -109,8 +110,8 @@ class RegisterViewUI: UIView {
     
     func setUI(){
         self.addSubview(registerLabel)
-        self.addSubview(userNameLabel)
-        self.addSubview(userNameTextField)
+        self.addSubview(userMailLabel)
+        self.addSubview(userMailTextField)
         self.addSubview(userPasswordLabel)
         self.addSubview(userPasswordTextField)
         self.addSubview(registerButton)
@@ -122,27 +123,27 @@ class RegisterViewUI: UIView {
             registerLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
             registerLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
             
-            userNameLabel.topAnchor.constraint(equalTo: registerLabel.bottomAnchor, constant: 50),
-            userNameLabel.leadingAnchor.constraint(equalTo: registerLabel.leadingAnchor, constant: 20),
-            userNameLabel.trailingAnchor.constraint(equalTo: registerLabel.trailingAnchor, constant: -20),
+            userMailLabel.topAnchor.constraint(equalTo: registerLabel.bottomAnchor, constant: 50),
+            userMailLabel.leadingAnchor.constraint(equalTo: registerLabel.leadingAnchor, constant: 20),
+            userMailLabel.trailingAnchor.constraint(equalTo: registerLabel.trailingAnchor, constant: -20),
             
-            userNameTextField.topAnchor.constraint(equalTo: userNameLabel.bottomAnchor, constant: 20),
-            userNameTextField.leadingAnchor.constraint(equalTo: userNameLabel.leadingAnchor),
-            userNameTextField.trailingAnchor.constraint(equalTo: userNameLabel.trailingAnchor),
-            userNameTextField.heightAnchor.constraint(equalToConstant: 35),
+            userMailTextField.topAnchor.constraint(equalTo: userMailLabel.bottomAnchor, constant: 20),
+            userMailTextField.leadingAnchor.constraint(equalTo: userMailLabel.leadingAnchor),
+            userMailTextField.trailingAnchor.constraint(equalTo: userMailLabel.trailingAnchor),
+            userMailTextField.heightAnchor.constraint(equalToConstant: 35),
             
-            userPasswordLabel.topAnchor.constraint(equalTo: userNameTextField.bottomAnchor, constant: 50),
-            userPasswordLabel.leadingAnchor.constraint(equalTo: userNameLabel.leadingAnchor),
-            userPasswordLabel.trailingAnchor.constraint(equalTo: userNameLabel.trailingAnchor),
+            userPasswordLabel.topAnchor.constraint(equalTo: userMailTextField.bottomAnchor, constant: 50),
+            userPasswordLabel.leadingAnchor.constraint(equalTo: userMailLabel.leadingAnchor),
+            userPasswordLabel.trailingAnchor.constraint(equalTo: userMailLabel.trailingAnchor),
             
             userPasswordTextField.topAnchor.constraint(equalTo: userPasswordLabel.bottomAnchor, constant: 20),
-            userPasswordTextField.leadingAnchor.constraint(equalTo: userNameLabel.leadingAnchor),
-            userPasswordTextField.trailingAnchor.constraint(equalTo: userNameLabel.trailingAnchor),
+            userPasswordTextField.leadingAnchor.constraint(equalTo: userMailLabel.leadingAnchor),
+            userPasswordTextField.trailingAnchor.constraint(equalTo: userMailLabel.trailingAnchor),
             userPasswordTextField.heightAnchor.constraint(equalToConstant: 35),
             
             registerButton.topAnchor.constraint(equalTo: userPasswordTextField.bottomAnchor, constant: 50),
-            registerButton.leadingAnchor.constraint(equalTo: userNameLabel.leadingAnchor),
-            registerButton.trailingAnchor.constraint(equalTo: userNameLabel.trailingAnchor),
+            registerButton.leadingAnchor.constraint(equalTo: userMailLabel.leadingAnchor),
+            registerButton.trailingAnchor.constraint(equalTo: userMailLabel.trailingAnchor),
             registerButton.heightAnchor.constraint(equalToConstant: 50),
         ])
     }
@@ -152,11 +153,20 @@ class RegisterViewUI: UIView {
     }
     
     @objc func continueTapped(_ sender: UIControl){
-        print("continuar")
+        if let email = userMailTextField.text, let password = userPasswordTextField.text {
+            Auth.auth().createUser(withEmail: email, password: password) {
+                (result, error) in
+                if let _ = result, error == nil {
+                    self.navigationController?.popViewController(animated: true)
+                } else {
+                    self.delegate?.notifyError(error: error?.localizedDescription ?? "Parece que hubo un error")
+                }
+            }
+        }
     }
     
     private func noNilFields() -> Bool {
-        guard let username = userNameTextField.text, !username.isEmpty,
+        guard let userMail = userMailTextField.text, !userMail.isEmpty,
               let password = userPasswordTextField.text, !password.isEmpty else {
             registerButton.backgroundColor = .lightGray
             return false

@@ -30,5 +30,13 @@ extension RegisterView: RegisterViewProtocol {
 }
 
 extension RegisterView: RegisterViewUIDelegate {
+    func notifyError(error: String) {
+        let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        //        alert.addAction(UIAlertAction(title: "Reintentar", style: .default, handler: { action in
+        //        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     
 }

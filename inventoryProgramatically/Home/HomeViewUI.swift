@@ -7,9 +7,12 @@
 
 import Foundation
 import UIKit
+import FirebaseAuth
 
 protocol HomeViewUIDelegate {
     func notifyRegisterUser()
+    func notifyError(error: String)
+    func notifyNextView()
 }
 
 class HomeViewUI: UIView{
@@ -32,7 +35,7 @@ class HomeViewUI: UIView{
         return label
     }()
     
-    private lazy var userNameTextField: UITextField = {
+    private lazy var userMailTextField: UITextField = {
         let textField = UITextField()
         textField.textColor = .black
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
@@ -122,7 +125,7 @@ class HomeViewUI: UIView{
     func setUI(){
         self.addSubview(welcomeLabel)
         self.addSubview(userNameLabel)
-        self.addSubview(userNameTextField)
+        self.addSubview(userMailTextField)
         self.addSubview(userPasswordLabel)
         self.addSubview(userPasswordTextField)
         self.addSubview(continueButton)
@@ -139,12 +142,12 @@ class HomeViewUI: UIView{
             userNameLabel.leadingAnchor.constraint(equalTo: welcomeLabel.leadingAnchor),
             userNameLabel.trailingAnchor.constraint(equalTo: welcomeLabel.trailingAnchor),
             
-            userNameTextField.topAnchor.constraint(equalTo: userNameLabel.bottomAnchor, constant: 20),
-            userNameTextField.leadingAnchor.constraint(equalTo: welcomeLabel.leadingAnchor),
-            userNameTextField.trailingAnchor.constraint(equalTo: welcomeLabel.trailingAnchor),
-            userNameTextField.heightAnchor.constraint(equalToConstant: 35),
+            userMailTextField.topAnchor.constraint(equalTo: userNameLabel.bottomAnchor, constant: 20),
+            userMailTextField.leadingAnchor.constraint(equalTo: welcomeLabel.leadingAnchor),
+            userMailTextField.trailingAnchor.constraint(equalTo: welcomeLabel.trailingAnchor),
+            userMailTextField.heightAnchor.constraint(equalToConstant: 35),
             
-            userPasswordLabel.topAnchor.constraint(equalTo: userNameTextField.bottomAnchor, constant: 50),
+            userPasswordLabel.topAnchor.constraint(equalTo: userMailTextField.bottomAnchor, constant: 50),
             userPasswordLabel.leadingAnchor.constraint(equalTo: welcomeLabel.leadingAnchor),
             userPasswordLabel.trailingAnchor.constraint(equalTo: welcomeLabel.trailingAnchor),
             
@@ -171,7 +174,16 @@ class HomeViewUI: UIView{
     }
     
     @objc func continueTapped(_ sender: UIControl){
-        print("continuar")
+        if let email = userMailTextField.text, let password = userPasswordTextField.text {
+            Auth.auth().signIn(withEmail: email, password: password) {
+                (result, error) in
+                if let _ = result, error == nil {
+                    self.delegate?.notifyNextView()
+                } else {
+                    self.delegate?.notifyError(error: error?.localizedDescription ?? "Parece que hubo un error")
+                }
+            }
+        }
     }
     
     @objc func registerTapped(_ sender: UIControl){
@@ -179,12 +191,12 @@ class HomeViewUI: UIView{
     }
     
     private func noNilFields() -> Bool {
-        guard let username = userNameTextField.text, !username.isEmpty,
+        guard let username = userMailTextField.text, !username.isEmpty,
               let password = userPasswordTextField.text, !password.isEmpty else {
             continueButton.backgroundColor = .lightGray
             return false
         }
-        registerButton.backgroundColor = InventoryColor.softColor
+        continueButton.backgroundColor = InventoryColor.softColor
         return true
     }
 }

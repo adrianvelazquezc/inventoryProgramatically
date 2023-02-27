@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43F439018E4FCADB5A9B0A08 /* Pods_inventoryProgramatically.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0660FBC608297417176D7B4A /* Pods_inventoryProgramatically.framework */; };
+		CE41165629AC537200963B2D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE41165529AC537200963B2D /* GoogleService-Info.plist */; };
+		CE41166029AC5F7E00963B2D /* InventoryListViewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41165829AC5F7E00963B2D /* InventoryListViewUI.swift */; };
+		CE41166129AC5F7E00963B2D /* InventoryListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41165929AC5F7E00963B2D /* InventoryListPresenter.swift */; };
+		CE41166229AC5F7E00963B2D /* InventoryListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41165A29AC5F7E00963B2D /* InventoryListRouter.swift */; };
+		CE41166329AC5F7E00963B2D /* InventoryListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41165B29AC5F7E00963B2D /* InventoryListProtocols.swift */; };
+		CE41166429AC5F7E00963B2D /* InventoryListMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41165C29AC5F7E00963B2D /* InventoryListMain.swift */; };
+		CE41166529AC5F7E00963B2D /* InventoryListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41165D29AC5F7E00963B2D /* InventoryListInteractor.swift */; };
+		CE41166629AC5F7E00963B2D /* InventoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41165E29AC5F7E00963B2D /* InventoryListView.swift */; };
+		CE41166729AC5F7E00963B2D /* InventoryListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41165F29AC5F7E00963B2D /* InventoryListEntity.swift */; };
 		CEC29FC629ABDF0B009818E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC29FC529ABDF0B009818E4 /* AppDelegate.swift */; };
 		CEC29FCF29ABDF0F009818E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC29FCE29ABDF0F009818E4 /* Assets.xcassets */; };
 		CEC29FD229ABDF0F009818E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC29FD029ABDF0F009818E4 /* LaunchScreen.storyboard */; };
@@ -32,6 +42,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0660FBC608297417176D7B4A /* Pods_inventoryProgramatically.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_inventoryProgramatically.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24AD842A38DC676103AB2250 /* Pods-inventoryProgramatically.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inventoryProgramatically.debug.xcconfig"; path = "Target Support Files/Pods-inventoryProgramatically/Pods-inventoryProgramatically.debug.xcconfig"; sourceTree = "<group>"; };
+		BF5D7ED2E5B520F99ADBD63C /* Pods-inventoryProgramatically.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inventoryProgramatically.release.xcconfig"; path = "Target Support Files/Pods-inventoryProgramatically/Pods-inventoryProgramatically.release.xcconfig"; sourceTree = "<group>"; };
+		CE41165529AC537200963B2D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CE41165829AC5F7E00963B2D /* InventoryListViewUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryListViewUI.swift; sourceTree = "<group>"; };
+		CE41165929AC5F7E00963B2D /* InventoryListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryListPresenter.swift; sourceTree = "<group>"; };
+		CE41165A29AC5F7E00963B2D /* InventoryListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryListRouter.swift; sourceTree = "<group>"; };
+		CE41165B29AC5F7E00963B2D /* InventoryListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryListProtocols.swift; sourceTree = "<group>"; };
+		CE41165C29AC5F7E00963B2D /* InventoryListMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryListMain.swift; sourceTree = "<group>"; };
+		CE41165D29AC5F7E00963B2D /* InventoryListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryListInteractor.swift; sourceTree = "<group>"; };
+		CE41165E29AC5F7E00963B2D /* InventoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryListView.swift; sourceTree = "<group>"; };
+		CE41165F29AC5F7E00963B2D /* InventoryListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryListEntity.swift; sourceTree = "<group>"; };
 		CEC29FC229ABDF0B009818E4 /* inventoryProgramatically.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = inventoryProgramatically.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC29FC529ABDF0B009818E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEC29FCE29ABDF0F009818E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,17 +85,52 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43F439018E4FCADB5A9B0A08 /* Pods_inventoryProgramatically.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		802723F513CC72A5687289E2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				24AD842A38DC676103AB2250 /* Pods-inventoryProgramatically.debug.xcconfig */,
+				BF5D7ED2E5B520F99ADBD63C /* Pods-inventoryProgramatically.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		96F66622AE3030C9F9F0E207 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0660FBC608297417176D7B4A /* Pods_inventoryProgramatically.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE41165729AC5ED800963B2D /* InventoryList */ = {
+			isa = PBXGroup;
+			children = (
+				CE41165829AC5F7E00963B2D /* InventoryListViewUI.swift */,
+				CE41165929AC5F7E00963B2D /* InventoryListPresenter.swift */,
+				CE41165A29AC5F7E00963B2D /* InventoryListRouter.swift */,
+				CE41165B29AC5F7E00963B2D /* InventoryListProtocols.swift */,
+				CE41165C29AC5F7E00963B2D /* InventoryListMain.swift */,
+				CE41165D29AC5F7E00963B2D /* InventoryListInteractor.swift */,
+				CE41165E29AC5F7E00963B2D /* InventoryListView.swift */,
+				CE41165F29AC5F7E00963B2D /* InventoryListEntity.swift */,
+			);
+			path = InventoryList;
+			sourceTree = "<group>";
+		};
 		CEC29FB929ABDF0B009818E4 = {
 			isa = PBXGroup;
 			children = (
 				CEC29FC429ABDF0B009818E4 /* inventoryProgramatically */,
 				CEC29FC329ABDF0B009818E4 /* Products */,
+				802723F513CC72A5687289E2 /* Pods */,
+				96F66622AE3030C9F9F0E207 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,6 +145,7 @@
 		CEC29FC429ABDF0B009818E4 /* inventoryProgramatically */ = {
 			isa = PBXGroup;
 			children = (
+				CE41165729AC5ED800963B2D /* InventoryList */,
 				CEC29FD929ABE022009818E4 /* Home */,
 				CEC29FED29ABF0D7009818E4 /* Register */,
 				CEC29FEE29ABF0EE009818E4 /* Components */,
@@ -95,6 +153,7 @@
 				CEC29FCE29ABDF0F009818E4 /* Assets.xcassets */,
 				CEC29FD029ABDF0F009818E4 /* LaunchScreen.storyboard */,
 				CEC29FD329ABDF0F009818E4 /* Info.plist */,
+				CE41165529AC537200963B2D /* GoogleService-Info.plist */,
 			);
 			path = inventoryProgramatically;
 			sourceTree = "<group>";
@@ -154,9 +213,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEC29FD629ABDF0F009818E4 /* Build configuration list for PBXNativeTarget "inventoryProgramatically" */;
 			buildPhases = (
+				2027FAA666C3F63A43E7F946 /* [CP] Check Pods Manifest.lock */,
 				CEC29FBE29ABDF0B009818E4 /* Sources */,
 				CEC29FBF29ABDF0B009818E4 /* Frameworks */,
 				CEC29FC029ABDF0B009818E4 /* Resources */,
+				093FA523DC7779C1447EE145 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -207,10 +268,53 @@
 			files = (
 				CEC29FD229ABDF0F009818E4 /* LaunchScreen.storyboard in Resources */,
 				CEC29FCF29ABDF0F009818E4 /* Assets.xcassets in Resources */,
+				CE41165629AC537200963B2D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		093FA523DC7779C1447EE145 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-inventoryProgramatically/Pods-inventoryProgramatically-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-inventoryProgramatically/Pods-inventoryProgramatically-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-inventoryProgramatically/Pods-inventoryProgramatically-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2027FAA666C3F63A43E7F946 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-inventoryProgramatically-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CEC29FBE29ABDF0B009818E4 /* Sources */ = {
@@ -220,13 +324,19 @@
 				CEC29FE329ABE04E009818E4 /* HomePresenter.swift in Sources */,
 				CEC29FF729ABF10B009818E4 /* RegisterViewUI.swift in Sources */,
 				CEC29FE629ABE04E009818E4 /* HomeMain.swift in Sources */,
+				CE41166729AC5F7E00963B2D /* InventoryListEntity.swift in Sources */,
+				CE41166029AC5F7E00963B2D /* InventoryListViewUI.swift in Sources */,
 				CEC29FFC29ABF10B009818E4 /* RegisterInteractor.swift in Sources */,
 				CEC29FFB29ABF10B009818E4 /* RegisterMain.swift in Sources */,
+				CE41166329AC5F7E00963B2D /* InventoryListProtocols.swift in Sources */,
+				CE41166629AC5F7E00963B2D /* InventoryListView.swift in Sources */,
 				CEC29FE529ABE04E009818E4 /* HomeProtocols.swift in Sources */,
 				CEC29FE429ABE04E009818E4 /* HomeRouter.swift in Sources */,
 				CEC2A00229ABF9A1009818E4 /* InventoryColor.swift in Sources */,
 				CEC29FC629ABDF0B009818E4 /* AppDelegate.swift in Sources */,
+				CE41166429AC5F7E00963B2D /* InventoryListMain.swift in Sources */,
 				CEC29FFD29ABF10B009818E4 /* RegisterView.swift in Sources */,
+				CE41166529AC5F7E00963B2D /* InventoryListInteractor.swift in Sources */,
 				CEC29FE829ABE04E009818E4 /* HomeView.swift in Sources */,
 				CEC29FF829ABF10B009818E4 /* RegisterPresenter.swift in Sources */,
 				CEC29FE229ABE04E009818E4 /* HomeViewUI.swift in Sources */,
@@ -235,7 +345,9 @@
 				CEC29FEC29ABE825009818E4 /* String+Extension.swift in Sources */,
 				CEC29FF929ABF10B009818E4 /* RegisterRouter.swift in Sources */,
 				CEC2A00029ABF1B6009818E4 /* inventory_NavigationBar.swift in Sources */,
+				CE41166129AC5F7E00963B2D /* InventoryListPresenter.swift in Sources */,
 				CEC29FFA29ABF10B009818E4 /* RegisterProtocols.swift in Sources */,
+				CE41166229AC5F7E00963B2D /* InventoryListRouter.swift in Sources */,
 				CEC29FE729ABE04E009818E4 /* HomeInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,7 +416,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -358,7 +470,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -370,6 +482,7 @@
 		};
 		CEC29FD729ABDF0F009818E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24AD842A38DC676103AB2250 /* Pods-inventoryProgramatically.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -383,6 +496,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -398,6 +512,7 @@
 		};
 		CEC29FD829ABDF0F009818E4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF5D7ED2E5B520F99ADBD63C /* Pods-inventoryProgramatically.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -411,6 +526,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

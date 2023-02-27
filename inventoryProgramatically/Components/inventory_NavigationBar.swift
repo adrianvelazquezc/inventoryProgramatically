@@ -7,8 +7,8 @@
 
 import UIKit
 
-@objc protocol inventory_NavigationBarDelegate {
-    @objc optional func buttonTapped()
+ protocol inventory_NavigationBarDelegate {
+    func buttonTapped()
 }
 
 open class inventory_NavigationBar: UIView {
@@ -68,7 +68,7 @@ open class inventory_NavigationBar: UIView {
     }
 
     @objc private func buttonTapped(_ sender: UIButton){
-        delegate?.buttonTapped?()
+        delegate?.buttonTapped()
     }
 
     
@@ -103,7 +103,7 @@ open class inventory_NavigationBar: UIView {
     }
     
     @objc private func menuTapped(_ sender: UIButton){
-        delegate?.buttonTapped?()
+        delegate?.buttonTapped()
     }
     
     @objc private func arrowTapped(_ sender: UIButton){

@@ -16,6 +16,10 @@ class HomePresenter {
 
 
 extension HomePresenter: HomePresenterProtocol {
+    func requestNextView() {
+        self.router?.navigateToNextView()
+    }
+    
     func requestRegisterUser() {
         self.router?.navigateToRegisterUser()
     }

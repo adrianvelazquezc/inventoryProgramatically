@@ -31,6 +31,16 @@ extension HomeView: HomeViewProtocol {
 }
 
 extension HomeView: HomeViewUIDelegate {
+    func notifyNextView() {
+        self.presenter?.requestNextView()
+    }
+    
+    func notifyError(error: String) {
+        let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     func notifyRegisterUser() {
         self.presenter?.requestRegisterUser()
     }
