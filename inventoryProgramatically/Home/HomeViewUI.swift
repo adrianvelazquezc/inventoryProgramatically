@@ -7,12 +7,10 @@
 
 import Foundation
 import UIKit
-import FirebaseAuth
 
 protocol HomeViewUIDelegate {
     func notifyRegisterUser()
-    func notifyError(error: String)
-    func notifyNextView()
+    func notifyMailAndPassword(email: String, password: String)
 }
 
 class HomeViewUI: UIView{
@@ -38,6 +36,7 @@ class HomeViewUI: UIView{
     private lazy var userMailTextField: UITextField = {
         let textField = UITextField()
         textField.textColor = .black
+        textField.text = "p1@gmail.com"
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
         textField.leftViewMode = .always
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -64,6 +63,7 @@ class HomeViewUI: UIView{
     private lazy var userPasswordTextField: UITextField = {
         let textField = UITextField()
         textField.textColor = .black
+        textField.text = "123456"
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
         textField.leftViewMode = .always
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -175,14 +175,7 @@ class HomeViewUI: UIView{
     
     @objc func continueTapped(_ sender: UIControl){
         if let email = userMailTextField.text, let password = userPasswordTextField.text {
-            Auth.auth().signIn(withEmail: email, password: password) {
-                (result, error) in
-                if let _ = result, error == nil {
-                    self.delegate?.notifyNextView()
-                } else {
-                    self.delegate?.notifyError(error: error?.localizedDescription ?? "Parece que hubo un error")
-                }
-            }
+            self.delegate?.notifyMailAndPassword(email: email, password: password)
         }
     }
     

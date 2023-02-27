@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import FirebaseAuth
 
 class InventoryListView: UIViewController {
     var presenter: InventoryListPresenterProtocol?
@@ -22,6 +23,13 @@ class InventoryListView: UIViewController {
 }
 
 extension InventoryListView: InventoryListViewProtocol {
+    func showLoading() {
+        inventory_ActivityIndicator.show(parent: self.view)
+    }
+    
+    func dissmissLoading() {
+        inventory_ActivityIndicator.remove(parent: self.view)
+    }
     
 }
 
@@ -29,11 +37,16 @@ extension InventoryListView: InventoryListViewUIDelegate {
     func notifyButtonTaped() {
         let alertController = UIAlertController(title: "¿Que quieres hacer?", message: nil, preferredStyle: .actionSheet)
         let action1 = UIAlertAction(title: "Ver Perfil", style: .default) { _ in
-//            self.successFavoriteAdded()
+
         }
         alertController.addAction(action1)
         let action2 = UIAlertAction(title: "Desconectar", style: .destructive) { _ in
-            self.navigationController?.popViewController(animated: true)
+            do{
+                try Auth.auth().signOut()
+                self.navigationController?.popViewController(animated: true)
+            }catch{
+                print("Error while signing out!")
+            }
         }
         alertController.addAction(action2)
         let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)

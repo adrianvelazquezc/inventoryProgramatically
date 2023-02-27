@@ -8,7 +8,8 @@
 import Foundation
 
 protocol RegisterViewProtocol: AnyObject {
-    
+    func showLoading()
+    func dissmissLoading()
 }
 
 protocol RegisterInteractorProtocol: AnyObject {

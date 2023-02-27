@@ -7,10 +7,9 @@
 
 import Foundation
 import UIKit
-import FirebaseAuth
 
 protocol RegisterViewUIDelegate {
-    func notifyError(error: String)
+    func notifyMailAndPassword(email: String, password: String)
 }
 
 class RegisterViewUI: UIView {
@@ -154,14 +153,7 @@ class RegisterViewUI: UIView {
     
     @objc func continueTapped(_ sender: UIControl){
         if let email = userMailTextField.text, let password = userPasswordTextField.text {
-            Auth.auth().createUser(withEmail: email, password: password) {
-                (result, error) in
-                if let _ = result, error == nil {
-                    self.navigationController?.popViewController(animated: true)
-                } else {
-                    self.delegate?.notifyError(error: error?.localizedDescription ?? "Parece que hubo un error")
-                }
-            }
+            self.delegate?.notifyMailAndPassword(email: email, password: password)
         }
     }
     

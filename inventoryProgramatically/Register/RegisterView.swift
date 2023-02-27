@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import FirebaseAuth
 
 class RegisterView: UIViewController {
     var presenter: RegisterPresenterProtocol?
@@ -26,17 +27,33 @@ class RegisterView: UIViewController {
 }
 
 extension RegisterView: RegisterViewProtocol {
+    func showLoading() {
+        inventory_ActivityIndicator.show(parent: self.view)
+    }
+    
+    func dissmissLoading() {
+        inventory_ActivityIndicator.remove(parent: self.view)
+    }
     
 }
 
 extension RegisterView: RegisterViewUIDelegate {
-    func notifyError(error: String) {
-        let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-        //        alert.addAction(UIAlertAction(title: "Reintentar", style: .default, handler: { action in
-        //        }))
-        self.present(alert, animated: true, completion: nil)
+    func notifyMailAndPassword(email: String, password: String) {
+        DispatchQueue.main.async {
+            self.showLoading()
+        }
+        Auth.auth().createUser(withEmail: email, password: password) {
+            (result, error) in
+            DispatchQueue.main.async {
+                self.dissmissLoading()
+                if let _ = result, error == nil {
+                    self.navigationController?.popViewController(animated: true)
+                } else {
+                    let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
     }
-    
-    
 }

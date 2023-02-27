@@ -8,7 +8,8 @@
 import Foundation
 
 protocol HomeViewProtocol: AnyObject {
-    
+    func showLoading()
+    func dissmissLoading()
 }
 
 protocol HomeInteractorProtocol: AnyObject {

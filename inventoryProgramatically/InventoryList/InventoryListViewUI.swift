@@ -17,7 +17,7 @@ class InventoryListViewUI: UIView{
     var navigationController: UINavigationController?
     
     lazy private var registerLabel: inventory_NavigationBar = {
-        let navigationBar = inventory_NavigationBar(titleText: "Inventario", delegate: self, navigationController: self.navigationController, isMenuButtonHidden: true)
+        let navigationBar = inventory_NavigationBar(titleText: "Inventario", delegate: self, navigationController: self.navigationController, isMenuButtonHidden: false)
         navigationBar.translatesAutoresizingMaskIntoConstraints = false
         return navigationBar
     }()

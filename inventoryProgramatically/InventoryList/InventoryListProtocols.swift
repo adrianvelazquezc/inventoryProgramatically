@@ -8,7 +8,8 @@
 import Foundation
 
 protocol InventoryListViewProtocol: AnyObject {
-    
+    func showLoading()
+    func dissmissLoading()
 }
 
 protocol InventoryListInteractorProtocol: AnyObject {
