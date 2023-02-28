@@ -21,38 +21,36 @@ class RegisterView: UIViewController {
         view = ui
         self.navigationController?.isNavigationBarHidden = true
     }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .lightContent
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.ui?.registerButton.isUserInteractionEnabled = true
     }
 }
 
 extension RegisterView: RegisterViewProtocol {
-    func showLoading() {
-        inventory_ActivityIndicator.show(parent: self.view)
-    }
-    
-    func dissmissLoading() {
-        inventory_ActivityIndicator.remove(parent: self.view)
-    }
     
 }
 
 extension RegisterView: RegisterViewUIDelegate {
     func notifyMailAndPassword(email: String, password: String) {
-        DispatchQueue.main.async {
-            self.showLoading()
-        }
+        self.ui?.mainView.backgroundColor = InventoryColor.transparentShadow2.withAlphaComponent(0.3)
         Auth.auth().createUser(withEmail: email, password: password) {
             (result, error) in
-            DispatchQueue.main.async {
-                self.dissmissLoading()
-                if let _ = result, error == nil {
+            if let _ = result, error == nil {
+                self.ui?.animationView.play(completion: { finished in
                     self.navigationController?.popViewController(animated: true)
-                } else {
-                    let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
-                }
+                })
+            } else {
+                self.ui?.mainView.backgroundColor = .clear
+                self.ui?.registerButton.isUserInteractionEnabled = true
+                let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                self.present(alert, animated: true, completion: nil)
             }
         }
     }

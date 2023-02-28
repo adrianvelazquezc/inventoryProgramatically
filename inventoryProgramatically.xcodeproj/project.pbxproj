@@ -18,6 +18,7 @@
 		CE41166629AC5F7E00963B2D /* InventoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41165E29AC5F7E00963B2D /* InventoryListView.swift */; };
 		CE41166729AC5F7E00963B2D /* InventoryListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41165F29AC5F7E00963B2D /* InventoryListEntity.swift */; };
 		CE41166929AC693800963B2D /* inventory_ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41166829AC693800963B2D /* inventory_ActivityIndicator.swift */; };
+		CEB4C75B29AD73F7002B48B0 /* 72462-check-register.json in Resources */ = {isa = PBXBuildFile; fileRef = CEB4C75A29AD73F7002B48B0 /* 72462-check-register.json */; };
 		CEC29FC629ABDF0B009818E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC29FC529ABDF0B009818E4 /* AppDelegate.swift */; };
 		CEC29FCF29ABDF0F009818E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC29FCE29ABDF0F009818E4 /* Assets.xcassets */; };
 		CEC29FD229ABDF0F009818E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC29FD029ABDF0F009818E4 /* LaunchScreen.storyboard */; };
@@ -56,6 +57,7 @@
 		CE41165E29AC5F7E00963B2D /* InventoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryListView.swift; sourceTree = "<group>"; };
 		CE41165F29AC5F7E00963B2D /* InventoryListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryListEntity.swift; sourceTree = "<group>"; };
 		CE41166829AC693800963B2D /* inventory_ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = inventory_ActivityIndicator.swift; sourceTree = "<group>"; };
+		CEB4C75A29AD73F7002B48B0 /* 72462-check-register.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "72462-check-register.json"; sourceTree = "<group>"; };
 		CEC29FC229ABDF0B009818E4 /* inventoryProgramatically.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = inventoryProgramatically.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC29FC529ABDF0B009818E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEC29FCE29ABDF0F009818E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -124,6 +126,14 @@
 				CE41165F29AC5F7E00963B2D /* InventoryListEntity.swift */,
 			);
 			path = InventoryList;
+			sourceTree = "<group>";
+		};
+		CEB4C75729AD7114002B48B0 /* Lotties */ = {
+			isa = PBXGroup;
+			children = (
+				CEB4C75A29AD73F7002B48B0 /* 72462-check-register.json */,
+			);
+			path = Lotties;
 			sourceTree = "<group>";
 		};
 		CEC29FB929ABDF0B009818E4 = {
@@ -204,6 +214,7 @@
 			children = (
 				CEC29FFF29ABF1B6009818E4 /* inventory_NavigationBar.swift */,
 				CE41166829AC693800963B2D /* inventory_ActivityIndicator.swift */,
+				CEB4C75729AD7114002B48B0 /* Lotties */,
 				CEC29FEA29ABE817009818E4 /* Extension */,
 			);
 			path = Components;
@@ -272,6 +283,7 @@
 				CEC29FD229ABDF0F009818E4 /* LaunchScreen.storyboard in Resources */,
 				CEC29FCF29ABDF0F009818E4 /* Assets.xcassets in Resources */,
 				CE41165629AC537200963B2D /* GoogleService-Info.plist in Resources */,
+				CEB4C75B29AD73F7002B48B0 /* 72462-check-register.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

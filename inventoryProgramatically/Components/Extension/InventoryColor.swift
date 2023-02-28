@@ -13,5 +13,6 @@ open class InventoryColor: NSObject {
     public static let darkColor =  #colorLiteral(red: 0.9908086658, green: 0.6273480654, blue: 0.005000063218, alpha: 1)
     public static let activityColor =  #colorLiteral(red: 0.5058823824, green: 0.3372549117, blue: 0.06666667014, alpha: 1)
     public static let placeHolderText = #colorLiteral(red: 0.4588235294, green: 0.4705882353, blue: 0.4823529412, alpha: 1)
+    public static let transparentShadow2 = #colorLiteral(red: 0.3289078772, green: 0.3289078772, blue: 0.3289078772, alpha: 1)
     public static let transparentShadow = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.1221039245)
 }

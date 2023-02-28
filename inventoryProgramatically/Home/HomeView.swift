@@ -25,6 +25,11 @@ class HomeView: UIViewController {
         .darkContent
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.ui?.registerButton.isUserInteractionEnabled = true
+    }
+    
 }
 
 extension HomeView: HomeViewProtocol {

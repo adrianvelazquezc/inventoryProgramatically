@@ -89,7 +89,7 @@ class HomeViewUI: UIView{
         return button
     }()
     
-    let registerButton: UIButton = {
+    public let registerButton: UIButton = {
         let button = UIButton()
         button.setTitle("¿No cuentas con una cuenta? Registrate", for: .normal)
         button.setTitleColor(InventoryColor.darkColor, for: .normal)
@@ -180,6 +180,7 @@ class HomeViewUI: UIView{
     }
     
     @objc func registerTapped(_ sender: UIControl){
+        self.registerButton.isUserInteractionEnabled = false
         self.delegate?.notifyRegisterUser()
     }
     

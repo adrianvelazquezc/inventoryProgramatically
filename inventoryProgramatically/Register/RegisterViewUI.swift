@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Lottie
 
 protocol RegisterViewUIDelegate {
     func notifyMailAndPassword(email: String, password: String)
@@ -16,6 +17,14 @@ class RegisterViewUI: UIView {
     var delegate: RegisterViewUIDelegate?
     var navigationController: UINavigationController?
     
+    
+    public var mainView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .clear
+        view.isUserInteractionEnabled = false
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     lazy private var registerLabel: inventory_NavigationBar = {
         let navigationBar = inventory_NavigationBar(titleText: "Registrate", delegate: nil, navigationController: self.navigationController, isMenuButtonHidden: true)
@@ -84,6 +93,14 @@ class RegisterViewUI: UIView {
         return button
     }()
     
+    public lazy var animationView: AnimationView = {
+       let animation = AnimationView(name: "72462-check-register")
+        animation.translatesAutoresizingMaskIntoConstraints = false
+        animation.loopMode = .playOnce
+        animation.isUserInteractionEnabled = false
+        return animation
+    }()
+    
     public convenience init(
         navigation: UINavigationController,
         delegate: RegisterViewUIDelegate){
@@ -114,6 +131,8 @@ class RegisterViewUI: UIView {
         self.addSubview(userPasswordLabel)
         self.addSubview(userPasswordTextField)
         self.addSubview(registerButton)
+        self.addSubview(mainView)
+        self.addSubview(animationView)
     }
     
     func setConstraints(){
@@ -144,6 +163,14 @@ class RegisterViewUI: UIView {
             registerButton.leadingAnchor.constraint(equalTo: userMailLabel.leadingAnchor),
             registerButton.trailingAnchor.constraint(equalTo: userMailLabel.trailingAnchor),
             registerButton.heightAnchor.constraint(equalToConstant: 50),
+            
+            animationView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            animationView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            
+            mainView.topAnchor.constraint(equalTo: topAnchor),
+            mainView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            mainView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            mainView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
     
@@ -152,6 +179,7 @@ class RegisterViewUI: UIView {
     }
     
     @objc func continueTapped(_ sender: UIControl){
+        self.registerButton.isUserInteractionEnabled = false
         if let email = userMailTextField.text, let password = userPasswordTextField.text {
             self.delegate?.notifyMailAndPassword(email: email, password: password)
         }

@@ -8,5 +8,6 @@ target 'inventoryProgramatically' do
   # Pods for inventoryProgramatically
 	pod 'FirebaseAuth'
 	pod 'FirebaseFirestore'
+	pod 'lottie-ios'
 
 end
